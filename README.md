@@ -1,6 +1,6 @@
 # Jaume Lab PhD Candidate Assignment
 
-Due date: 10 days after receiving instructions. Please let me know if you need more time. 
+**Due date:** 10 days after receiving instructions. Please let me know if you need more time. 
 
 ## Overview
 
