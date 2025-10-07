@@ -41,7 +41,7 @@ The model is trained with structured samples like
 
 By exposing the model to many of such examples, the system learns to:
 - Interpret diverse phrasing of user requests,
-- Perform multimodal ``reasoning'', and
+- Perform multimodal reasoning, and
 - Produce consistent, interpretable outputs.  
 
 ---
@@ -75,14 +75,14 @@ You may focus on one or more of the following components:
 - Identify **existing public segmentation/classification datasets** (e.g., PanNuke, Lizard, NuCLS, CoNSeP, MoNuSeg, etc.).
 - Propose a **pipeline to transform existing annotations** (masks, nuclei, captions, etc.) into instruction–response pairs suitable for **zero-shot training**.
 - Design a **data generation loop** using LLMs to produce varied and realistic instructions (e.g., “Find mitotic figures” → segmentation mask + caption).
-- Think about guardrails!! E.g., what if a user ask to count the hepatocytes (liver cells), the tissue is actually kidney, the output should likely look like: ``This appears to be kidney tissue, are you sure this is a liver image?''
+- Think about guardrails! E.g., what if a user asks to count the hepatocytes (liver cells), but the tissue is actually kidney? The output should likely look like: "This appears to be kidney tissue, are you sure this is a liver image?"
 - Discuss how to **maximize diversity** across tissue types and diseases.
 
 ### 2. Modeling Strategy
 - Propose a **joint model** (vision–language transformer, or instruction-tuned LLM+ViT hybrid).
 - Discuss **transfer learning** and how to leverage pretrained biomedical or general models.
 - Suggest training objectives (contrastive loss, segmentation loss, caption loss, instruction tuning).
-- Suggest ways to generate the segmentation output. How are SegmentAnything, BioMedParse, etc, doing this task?
+- Suggest ways to generate the segmentation output. How are SegmentAnything, BioMedParse, etc., doing this task?
 
 ### 3. Implementation Component
 Choose one small but technically interesting piece to implement, for example:
@@ -90,7 +90,7 @@ Choose one small but technically interesting piece to implement, for example:
 - Vision encoder fine-tuning script.
 - Prompt-to-segmentation proof of concept using a pretrained SAM/CLIP/DINO model.
 - LLM-based instruction expansion pipeline.
-- It can be any component that you feel the most comfortable implementing. Being small is not a problem, but it has to be justified and clean. 
+- It can be any component that you feel most comfortable implementing. Being small is not a problem, but it has to be justified and clean. 
 
 ---
 
@@ -120,7 +120,7 @@ Your submission will be evaluated on:
 ## ⚙️ Practical Details
 
 - **Submission:**  
-  Fork this repository and submit your project as a **private GitHub repo** `guillaumejaume` as a collaborator.
+  Fork this repository and submit your project as a **private GitHub repo** with `guillaumejaume` as a collaborator.
 
 - **Structure:**
 
@@ -139,7 +139,7 @@ Your submission will be evaluated on:
 
 ## Final Thought
 
-This is not a test of your ability to finish, there is WAY too much work, it’s a test of how you **think and approach a complex problem**.  
+This is not a test of your ability to finish—there is WAY too much work. It's a test of how you **think and approach a complex problem**.  
 Show curiosity, ambition, and clarity.  
 Surprise us.
 
