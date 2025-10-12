@@ -120,22 +120,22 @@ You may focus on one or more of the following components:
 
   * [Kolmogorov–Smirnov (K–S)](https://www.tandfonline.com/doi/abs/10.1080/01621459.1951.10500769) test used in [BiomedParse](https://www.nature.com/articles/s41592-024-02499-w.epdf?sharing_token=13MXNEG8f5JOr30TorWJXNRgN0jAjWel9jnR3ZoTv0PZugrLJtTZcQj4PJckxX_PaGqvO3y6jPvaAlFxqlfW8F1tqAukjnPV-aqr4s4izWg_qebtOm7qbi6Z08lkjqQOOaSe7JB9tCb23TCY3OrElyRUhgGtiROQd3xy4AwyZIsjw-5m2Cx8bag044uNrqQHwSazsFcyeiEYlaP6lqewuQu0xEd5yA0CQhB-2umuHSM%3D)
 
-* Chain of Thought prompt:
-
-  > Just an example:
-  > **Your Task:** Before you execute any request, you must first verify its underlying assumptions. Use this general chain of thought:
-  >
-  > 1. **Analyze the Request:**\
-  >        a. What is the user's primary goal?\
-  >        b. What key assumption must be true about the provided input for this request to be valid?\
-  > 2. **Analyze the Input:**\
-  >        a. Examine the input data independently.\
-  >        b. What are its actual properties, content, or context?\
-  > 3. **Compare and Verify:**\
-  >        a. Does your independent analysis of the input (from Step 2) match the user's core assumption (from Step 1)?\
-  > 4. **Formulate a Response:**\
-  >        a. If they match, proceed with the user's original request.\
-  >        b. If they do NOT match, do not proceed. Instead, clearly state the discrepancy you found and ask the user for clarification.\
+  * Chain of Thought prompt:
+  
+    > Just an example:
+    > **Your Task:** Before you execute any request, you must first verify its underlying assumptions. Use this general chain of thought:
+    >
+    > 1. **Analyze the Request:**\
+    >        a. What is the user's primary goal?\
+    >        b. What key assumption must be true about the provided input for this request to be valid?\
+    > 2. **Analyze the Input:**\
+    >        a. Examine the input data independently.\
+    >        b. What are its actual properties, content, or context?\
+    > 3. **Compare and Verify:**\
+    >        a. Does your independent analysis of the input (from Step 2) match the user's core assumption (from Step 1)?\
+    > 4. **Formulate a Response:**\
+    >        a. If they match, proceed with the user's original request.\
+    >        b. If they do NOT match, do not proceed. Instead, clearly state the discrepancy you found and ask the user for clarification.\
 
 * Discuss how to **maximize diversity** across tissue types and diseases.
 
