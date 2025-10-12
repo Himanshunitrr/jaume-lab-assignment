@@ -110,7 +110,7 @@ You may focus on one or more of the following components:
 
 * Propose a **pipeline to transform existing annotations** (masks, nuclei, captions, etc.) into instruction–response pairs suitable for **zero-shot training**.
 
-  * Similar to the next question?
+  * An existing SOTA VLM like PathGen-LLaVA can be used to generate captions/instructions for images which have masks (probably we can mention in the prompt the objects/ stuff present in the image (known from masks) so that it generates more relevant captions/instructions)
 
 * Design a **data generation loop** using LLMs to produce varied and realistic instructions (e.g., “Find mitotic figures” → segmentation mask + caption).
 
