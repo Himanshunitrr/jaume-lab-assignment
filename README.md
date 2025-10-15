@@ -257,6 +257,16 @@ Choose one small but technically interesting piece to implement, for example:
 * LLM-based instruction expansion pipeline.
 * It can be any component that you feel most comfortable implementing. Being small is not a problem, but it has to be justified and clean.
 
+Implemented instruction dataset curation for a small sample (which can be scaled to a larger dataset) using Claude-3 using PanopTILs dataset. Prompts can be further refined. (A lot of things are still not grounded like T cells etc as the dataset did not had those annotations).
+
+
+
+notebooks/panopTIL.ipynb: Looked at the dataset and visualized some samples. Found few images dont have exhaustive annotations so skipped them using a threshold of exclude label / tissue area (which should be less than 0.1)
+
+notebooks/instruction_curation.ipynb: Implemented the instruction dataset curation pipeline using Claude-3 on just 5 images. (Can be scaled to a larger dataset). 
+
+(Special tokens and overall structure of the output will different for the final VLM training depending on the architecture and the dataset class.)
+
 ---
 
 ## 📚 References
@@ -291,11 +301,7 @@ Your submission will be evaluated on:
 
   ```
   ├── README.md # Main description (this file)
-  ├── data/ # Example data or links
-  ├── src/ # Code for your component
   ├── notebooks/ # Optional exploratory notebooks
-  ├── results/ # Optional visualizations
-  └── references/ # Additional papers, diagrams, or notes
   ```
 
 * **Language:** Python (preferably with PyTorch)
