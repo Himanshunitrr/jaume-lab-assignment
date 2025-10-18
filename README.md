@@ -110,11 +110,16 @@ You may focus on one or more of the following components:
 
 * Propose a **pipeline to transform existing annotations** (masks, nuclei, captions, etc.) into instruction–response pairs suitable for **zero-shot training**.
 
-  * An existing SOTA VLM like PathGen-LLaVA can be used to generate captions/instructions for images which have masks (probably we can mention in the prompt the objects/ stuff present in the image (known from masks) so that it generates more relevant captions/instructions)
+  * ~~An existing SOTA VLM like PathGen-LLaVA can be used to generate captions/instructions for images which have masks (probably we can mention in the prompt the objects/ stuff present in the image (known from masks) so that it generates more relevant captions/instructions)~~
+
+  * Use GPT-5 to use generate instructions/captions for images with existing masks/ bounding boxes/ image-level labels. 
+  (Not happy with the captions generated, I think a better approach will be to create a dictionary of all the objects/ stuff present in pathology images and then using a large image-caption dataset (like BIOMEDICA, PathCap etc) use GPT-5 etc to match the similar object in the caption to that in the dictionary and then use the SOTA segmentor of that object to generate masks). 
 
 * Design a **data generation loop** using LLMs to produce varied and realistic instructions (e.g., “Find mitotic figures” → segmentation mask + caption).
 
-  * Using the existing image-caption pairs, Visual Question Answer pairs, Reasoning datasets, under a for loop we use a LLM to detect object/stuff in the text and using models like BioMedParse to generate corresponding masks. Then we modify the text to add tokens (if not present) like `<p>`, `</p>`, `<SEG>`, `<think>`, `<image>` etc (Specialized tokens are used to convey to VLM the underlying task) and arrange them so that it can be used by the dataset class and thus to train the VLM...
+  ~~* Using the existing image-caption pairs, Visual Question Answer pairs, Reasoning datasets, under a for loop we use a LLM to detect object/stuff in the text and using models like BioMedParse to generate corresponding masks. Then we modify the text to add tokens (if not present) like `<p>`, `</p>`, `<SEG>`, `<think>`, `<image>` etc (Specialized tokens are used to convey to VLM the underlying task) and arrange them so that it can be used by the dataset class and thus to train the VLM...~~
+
+  * Using the previous generated captions, call GPT-5 to generate VQA pairs from them.
 
 * Think about guardrails! E.g., what if a user asks to count the hepatocytes (liver cells), but the tissue is actually kidney? The output should likely look like: "This appears to be kidney tissue, are you sure this is a liver image?"
 
